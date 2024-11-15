@@ -104,7 +104,6 @@ public class Controladora {
         }
 
         //Revision diagonales
-
         if (triqui[0][0] != " " && triqui[1][1] != " " && triqui[2][2] != " " && triqui[0][0].equals(triqui[1][1]) && triqui[0][0].equals(triqui[2][2])) {
             msg = triqui[0][0];
         } else if (triqui[0][2] != " " && triqui[1][1] != " " && triqui[2][0] != " " && triqui[0][2].equals(triqui[1][1]) && triqui[0][2].equals(triqui[2][0])){
@@ -114,6 +113,7 @@ public class Controladora {
         
 
         /**
+         * Intentos fallidos o incompletos
          * for (int i = 0; i < triqui.length; i++) {
             counter = 0; 
 
