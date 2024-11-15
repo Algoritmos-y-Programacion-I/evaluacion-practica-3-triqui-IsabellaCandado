@@ -21,7 +21,7 @@ public class Executable {
         while (!flag) {
 
             System.out.println("\n\nBienvenido al menu:\n");
-            System.out.println("Opciones:\n" + "1. Imprimir tablero \n" + "2. Jugada de la máquina \n"
+            System.out.println("Opciones:\n" + "1. Imprimir tablero \n" + "2. Jugada de la maquina \n"
                     + "3. Jugada de humano \n" + "4. Verificar ganador \n" + "5. Salir del programa \n");
 
             int option = reader.nextInt();
@@ -64,15 +64,33 @@ public class Executable {
 
     private void jugadaMaquina() {
         cont.jugadaAleatoria();
-        System.out.println("La máquina ha realizado su jugada.");
+        System.out.println("La maquina ha realizado su jugada.");
         imprimirTablero();
     }
 
     private void jugadaHumano() {
-        // Implementación de jugada de humano
+        System.out.println("Ingrese las coordenadas de donde desea hacer su jugada:");
+        System.out.print("Fila: ");
+        int i = reader.nextInt();
+        reader.nextLine();
+        System.out.print("Columna: ");
+        int j = reader.nextInt();
+        reader.nextLine();
+
+        if (cont.jugadaHumano(i,j) == " ") {
+            imprimirTablero();
+        } else {
+            System.out.println(cont.jugadaHumano(i, j));
+        }
     }
 
     private void validarGanador() {
-        // Implementación de la validación si alguien ya ganó el triqui
+        System.out.println(cont.verificarGanador());
+
+        if (cont.verificarGanador().equals("O")) {
+            System.out.println("Has ganado! :D");
+        } else if (cont.verificarGanador().equals("X")) {
+            System.out.println("Ha ganado la maquina! D:");
+        }
     }
 }
